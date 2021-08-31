@@ -1,49 +1,51 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import SelectedBeast from './SelectedBeast'
 class HornedBeasts extends React.Component {
 
-    constructor(props) {
-        super(props)
-        this.state = { num: 0 }
-    }
+  constructor(props) {
+    super(props)
+    this.state = { num: 0 }
+  }
 
-    vote = () => {
-        this.setState({
+  vote = () => {
+    this.setState({
 
-            num: this.state.num + 1
-        })
+      num: this.state.num + 1
+    })
+    
+    
+  }
+  render() {
 
-    }
-    render() {
+    return (
 
-        return (<>
 
-        
-        <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={this.props.imageUrl} onClick={this.vote} />
+        <>
+          <Col>
+      <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={this.props.imageUrl} onClick={this.vote} />
             <Card.Body>
-                <Card.Title>{this.props.title}</Card.Title>
-                <Card.Text>
-                    the number of favorites:{this.state.num}
-                </Card.Text>
-                <Card.Text>
-                    {this.props.description}
-                </Card.Text>
-
+              <Card.Title>{this.props.title}</Card.Title>
+              <Card.Text>
+                the number of favorites:{this.state.num}
+              </Card.Text>
+              <Card.Text>
+                {this.props.description}
+              </Card.Text>
+              {/* <Button variant="primary"  onClick={this.props.handleShow}>
+        Launch demo modal
+      </Button> */}
             </Card.Body>
-        </Card>
-            {/* <h2>{this.props.title}</h2> */}
-            {/* <img src={this.props.imageUrl} onClick={this.vote} /> */}
-            {/* <h3>the number of favorites:{this.state.num}</h3> */}
-            {/* <p>{this.props.description}</p> */}
-
-
-
+      </Card>
+    </Col>
         </>)
     }
 
 
 
 }
-export default HornedBeasts
+        export default HornedBeasts
