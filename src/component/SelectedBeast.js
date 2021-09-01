@@ -1,47 +1,35 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import Main from './Main'
-import HornedBeasts from './HornedBeasts'
-import  { useEffect, useState } from "react";
+import Card from 'react-bootstrap/Card';
+class SelectedBeast extends React.Component {
+  render() {
+    return (
 
-function SelectedBeast() {
 
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  return (
-   
-      <>
-        <Button variant="primary"  onClick={handleShow}>
-        Launch demo modal
-      </Button>
-  
-        <Modal show={show} onHide={handleClose}>
+        <>
+        
+          <Modal show={this.props.show} onHide={this.props.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>{this.props.title}</Modal.Title>
           </Modal.Header>
-          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+          
+          <Modal.Body> 
+            <Card.Img variant="top" src={this.props.url} />
+             <p>{this.props.desc}</p> </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
+            <Button variant="secondary" onClick={this.props.handleClose}>
               Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
             </Button>
           </Modal.Footer>
         </Modal>
-      </>
-    );
-  }
-  
+        </>
+        )
+    }
 
 
-export default SelectedBeast;
 
-
+}
+        export default SelectedBeast
 
 

@@ -2,12 +2,11 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import SelectedBeast from './SelectedBeast'
+
 class HornedBeasts extends React.Component {
 
   constructor(props) {
-    super(props)
+    super(props);
     this.state = { num: 0 }
   }
 
@@ -17,7 +16,8 @@ class HornedBeasts extends React.Component {
       num: this.state.num + 1
     })
     
-    
+    this.props.showfun()
+    this.props.info(this.props.title,this.props.imageUrl,this.props.description)
   }
   render() {
 
@@ -36,9 +36,7 @@ class HornedBeasts extends React.Component {
               <Card.Text>
                 {this.props.description}
               </Card.Text>
-              {/* <Button variant="primary"  onClick={this.props.handleShow}>
-        Launch demo modal
-      </Button> */}
+              
             </Card.Body>
       </Card>
     </Col>
