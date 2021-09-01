@@ -7,7 +7,7 @@ class Main extends React.Component {
     render() {
         return (
             <>
-                <Row xs={1} md={3} className="g-4">
+                <Row xs={1} md={3} className="g-4" >
                     {this.props.data.map(element => {
 
 

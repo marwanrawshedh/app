@@ -25,7 +25,7 @@ class HornedBeasts extends React.Component {
 
 
         <>
-          <Col>
+          <Col >
       <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={this.props.imageUrl} onClick={this.vote} />
             <Card.Body>
